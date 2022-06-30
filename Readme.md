@@ -26,7 +26,7 @@ docker-compose up -d
 ```
 
 #### Post man collection
-[postman collection url]("https://www.getpostman.com/collections/36415dbeab3f154f2d9a")
+[https://www.getpostman.com/collections/36415dbeab3f154f2d9a]("https://www.getpostman.com/collections/36415dbeab3f154f2d9a")
 
 
 <br/>
