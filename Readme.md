@@ -15,7 +15,7 @@ mysql -u [user] -p emrdb < dump.sql
 ```
 #### Run docker-compose
 Run at once
-```
+```js
 // to build the .jar
 bash ./setup.sh
 
