@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcConfigurer;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.works.emr.EmrApplication;
@@ -23,7 +22,7 @@ import com.works.emr.EmrApplication;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = EmrApplication.class)
 @WebAppConfiguration
-class StaffHttpTest {
+public class PatientHttpTests {
   private MockMvc mockMvc;
 
   @Autowired
@@ -35,20 +34,8 @@ class StaffHttpTest {
    }
 
     @Test
-    public void should_Create_StaffAccount_Successfully() throws Exception {
-         mockMvc.perform( MockMvcRequestBuilders.post("/v1/api/staff")
-              .contentType(MediaType.APPLICATION_JSON)
-              .content("{ \"name\": \"Jane Doe\", \"registration_date\": \"2022-06-29\" }") 
-              .accept(MediaType.APPLICATION_JSON))
-              .andExpect(MockMvcResultMatchers.status().isCreated())
-              .andExpect(MockMvcResultMatchers.jsonPath("$.uuid").exists());
-    }
-
-    @Test
-    public void should_Update_Staff_Name_Successfully() throws Exception {
-      mockMvc.perform( MockMvcRequestBuilders.put("/v1/api/staff/1")
-              .contentType(MediaType.APPLICATION_JSON)
-              .content("{\"id\": 1, \"name\": \"Hope Doe\"}") 
+    public void should_Fetch_Patient_At_Min_Age_Of_2_Successfully() throws Exception {
+         mockMvc.perform( MockMvcRequestBuilders.get("/v1/api/patient?minAge=2")
               .accept(MediaType.APPLICATION_JSON))
               .andExpect(MockMvcResultMatchers.status().isOk());
     }
