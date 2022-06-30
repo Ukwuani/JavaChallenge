@@ -13,9 +13,15 @@ mysql -u [user] -p emrdb < dump.sql
 ```
 ./mvnw test 
 ```
+#### Run docker
+```
+docker-compose up -d
+// emr-api will run on tcp :8070
+// adminer will run on tcp :8000
+```
 
 #### Post man collection
-[postman collection url]("https://documenter.getpostman.com/view/5832701/UzBvH3zu")
+[postman collection url]("https://www.getpostman.com/collections/36415dbeab3f154f2d9a")
 
 
 <br/>
