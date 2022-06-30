@@ -13,8 +13,13 @@ mysql -u [user] -p emrdb < dump.sql
 ```
 ./mvnw test 
 ```
-#### Run docker
+#### Run docker-compose
+Run at once
 ```
+// to build the .jar
+bash ./setup.sh
+
+// to run app
 docker-compose up -d
 // emr-api will run on tcp :8070
 // adminer will run on tcp :8000
