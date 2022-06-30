@@ -2,6 +2,7 @@ package com.works.emr.patient;
 
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,11 @@ public class PatientService {
 	 *
 	 */
 
-	public List<PatientEntity> getPatients(Integer age) {
+	public List<PatientEntity> getPatients(Integer minAge) {
 		//TODO:: effect pagination
-		List<PatientEntity> patients = patientRepository.findByAgeGreaterThanEqual(age);
+		//Got confused here, don't know if the 2years is age of patient or age of record
+		// LocalDate date = LocalDate.now().minusYears(yearsAgo);
+		List<PatientEntity> patients = patientRepository.findByAgeGreaterThanEqual(minAge);
 		return patients;
 	}
 	

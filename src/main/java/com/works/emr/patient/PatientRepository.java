@@ -13,6 +13,7 @@ public interface PatientRepository extends JpaRepository < PatientEntity, Long >
 
     List<PatientEntity> findByAgeGreaterThanEqual(int age);
     
+
     @Modifying
     @Query("delete from patient p where last_visit_date BETWEEN ?1 AND ?2")
     void deleteInBulkByLast_visit_dateBetween(Date from, Date to);
